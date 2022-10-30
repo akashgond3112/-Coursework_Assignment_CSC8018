@@ -437,6 +437,19 @@ h4 {
   padding-top: 2px;
   padding-bottom: 2px;
 }
+
+.bottom{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.bottom button {
+  background-color: #fff3b3;
+  border-color: #fff3b3;
+  border-radius: 6px;
+  width: 55%;
+  text-align: center;
+  padding: 8px 16px;
+}
 /* -----------------------------Calculator----------------------------------------------- */
 
 /* -------------------------------footer------------------------------------------------- */
@@ -455,7 +468,7 @@ footer {
   left: 25%;
 }
 
-.footer-main  a{
+.footer-main a {
   color: inherit;
 }
 /* -------------------------------------------------------------------------------------- */
