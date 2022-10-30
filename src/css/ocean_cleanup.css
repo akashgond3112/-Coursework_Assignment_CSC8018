@@ -12,6 +12,7 @@ body {
   color: #333;
 }
 
+/* ----------------------Header-Start---------------------------------------------- */
 .header {
   height: 45vh;
   background-image: url(../img/ocean.jpg);
@@ -55,11 +56,13 @@ body {
   text-shadow: 2px 2px 8px rgb(10, 9, 9);
 }
 
-.navbar li {
-  list-style: none;
-  display: inline-block;
-  padding-top: 15px;
-  padding-bottom: 15px;
+/* ----------------------Header-End---------------------------------------------- */
+
+/* ----------------------NavBar-Start---------------------------------------------- */
+
+.navigation {
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .navbar {
@@ -69,8 +72,14 @@ body {
   bottom: 0;
   display: flex;
   justify-content: center;
-  align-content: stretch;
   background: rgba(12, 12, 12, 0.394);
+}
+
+.navbar li {
+  list-style: none;
+  display: inline-block;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .navbar a {
@@ -93,6 +102,7 @@ body {
 .navbar a:hover {
   color: #048376;
 }
+/* ----------------------NavBar-End---------------------------------------------- */
 
 .container {
   padding-left: 25%;
@@ -102,6 +112,7 @@ body {
 .container-2 {
   padding-left: 25%;
   padding-right: 5%;
+  padding-bottom: 2%;
 }
 
 .video iframe,
@@ -125,6 +136,12 @@ h3 {
   font-size: 20px;
   font-weight: 400;
   font-family: "Special Elite", cursive;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+h4 {
+  padding-top: 10px;
   padding-bottom: 10px;
 }
 
@@ -273,6 +290,7 @@ i {
 }
 
 #Ocean_Cleanup {
+  padding-top: 20px;
   padding-bottom: 20px;
 }
 /* -----------------------------Section-6 End ----------------------------------------- */
@@ -289,7 +307,7 @@ div.image-5_container img {
   padding-bottom: 25px;
 }
 
-div.section-7_paragraph p{
+div.section-7_paragraph p {
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -303,6 +321,7 @@ input {
 .section-7_flex_container-secondary {
   display: flex;
   flex-direction: row;
+  gap: 2rem;
 }
 
 .flex_container-2_primary {
@@ -328,8 +347,7 @@ input {
 }
 
 .section-7_flex_container_2 {
-    padding-left: 20px;
-    flex: 15%;
+  flex: 15%;
 }
 
 .section-7_flex_container_4_primary,
@@ -337,14 +355,8 @@ input {
   padding-bottom: 20px;
 }
 
-.flex_container-2_secondary {
-  flex: 10%;
-  background-color: #fff6c6;
-  border-radius: 20px;
-  padding-left: 20px;
-}
-
-div.image-4_container, div.image-5_container  {
+div.image-4_container,
+div.image-5_container {
   background-color: #fff;
   box-shadow: 3px 4px 10px 0px black;
   position: relative;
@@ -387,15 +399,73 @@ div.image-5_captions p {
   bottom: 5px;
 }
 
+#Plastic_Recycling {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 /* -----------------------------Section-7 End------------------------------------------- */
 /* -----------------------------Calculator----------------------------------------------- */
+.flex_container-2_secondary {
+  flex: 10%;
+  background-color: #fff6c6;
+  border-radius: 20px;
+  padding-left: 10px;
+}
+
 h4 {
   font-size: 20px;
   font-weight: 400;
   font-family: "Special Elite", cursive;
 }
+
+.Food_And_Kitchen tbody tr td {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.Disposable_Containers_Packaging tbody tr td {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.Bathroom_Laundry tbody tr td {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.Household_size tbody tr td {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
 /* -----------------------------Calculator----------------------------------------------- */
+
+/* -------------------------------footer------------------------------------------------- */
+
+footer {
+  height: 15vh;
+  background-image: url(../img/ocean.jpg);
+  background-size: cover;
+  background-position: right;
+  position: relative;
+}
+
+.footer-main {
+  position: absolute;
+  bottom: 25%;
+  left: 25%;
+}
+
+.footer-main  a{
+  color: inherit;
+}
+/* -------------------------------------------------------------------------------------- */
 @media (max-width: 800px) {
+  .container,
+  .container-2 {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
   .header {
     height: 65vh;
   }
@@ -419,24 +489,19 @@ h4 {
   }
 
   .navbar {
-    background: rgba(12, 12, 12, 0.394);
     flex-direction: column;
-    align-items: center;
+    min-height: 34vh;
   }
 
   .navbar li {
     padding-top: 10px;
     padding-bottom: 10px;
+    width: 100%;
   }
 
   .navbar a {
     padding-top: 10px;
     padding-bottom: 10px;
-  }
-
-  .container {
-    padding-left: 5%;
-    padding-right: 5%;
   }
 
   .video iframe,
@@ -467,5 +532,12 @@ h4 {
   .section-5_flex_container-2 {
     order: 2;
     padding-top: 20px;
+  }
+
+  .flex_container-2_main,
+  .section-7_flex_container-primary,
+  .section-7_flex_container-secondary,
+  .flex_container-2_secondary {
+    flex-direction: column;
   }
 }
