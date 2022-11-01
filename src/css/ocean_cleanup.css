@@ -172,11 +172,15 @@ h4 {
 .conainer_image-para-2 .column {
   flex: 50%;
 }
+.dropdown-content {
+  display: none;
+}
 
 div.image-2 {
   background-color: #fff;
   transform: rotate(-3deg);
   box-shadow: 3px 4px 10px 0px black;
+  padding: 10px;
 }
 
 .image-2_para {
@@ -185,7 +189,6 @@ div.image-2 {
 
 div.image-2 img {
   width: 100%;
-  padding: 10px;
 }
 
 div.image-2_captions {
@@ -197,6 +200,7 @@ div.image-2_captions p {
   font-size: 15px;
   font-weight: 600;
   color: gray;
+  text-align: right;
 }
 /* ------------------------------------------------- */
 /* ------------------------------Tabel Data -1-------------------------------------- */
@@ -438,7 +442,7 @@ h4 {
   padding-bottom: 2px;
 }
 
-.bottom{
+.bottom {
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -449,6 +453,11 @@ h4 {
   width: 55%;
   text-align: center;
   padding: 8px 16px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+   opacity: 1;
 }
 /* -----------------------------Calculator----------------------------------------------- */
 

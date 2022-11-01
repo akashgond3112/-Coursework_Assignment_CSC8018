@@ -23,11 +23,11 @@
     <link rel="stylesheet" href="../css/ocean_cleanup.css" />
 
     <title>Ocean</title>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       window.onload = function () {
         document.forms["0"].submit();
       };
-    </script>
+    </script> -->
   </head>
 
   <body>
@@ -55,25 +55,25 @@
             <div>
               <a href="#">Technology</a>
             </div>
-            <!-- <div class="dropdown-content">
-                <ul>
-                  <li>
-                    <div class="tablink" id="defaultOpen">
-                      <a href="#">Ocean Cleanup</a>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="tablink" id="defaultOpen">
-                      <a href="#">River Interception</a>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="tablink" id="defaultOpen">
-                      <a href="#">Plastic Recycling</a>
-                    </div>
-                  </li>
-                </ul>
-              </div> -->
+            <div class="dropdown-content">
+              <ul>
+                <li>
+                  <div class="tablink" id="defaultOpen">
+                    <a href="#">Ocean Cleanup</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="tablink" id="defaultOpen">
+                    <a href="#">River Interception</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="tablink" id="defaultOpen">
+                    <a href="#">Plastic Recycling</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </li>
           <li class="option-4">
             <div>
@@ -407,7 +407,7 @@
         <div class="flex_container-2_secondary">
           <div id="calculator">
             <div>
-              <form id="updateForm">
+              <form id="updateForm" class="updateForm">
                 <table class="table-data_2">
                   <tbody>
                     <tr class="table_header">
@@ -425,39 +425,61 @@
                           <tbody>
                             <tr>
                               <td class="label">
-                                <label class="smallText">Plastic bottles</label>
+                                <label id="Plastic bottles"
+                                  >Plastic bottles</label
+                                >
                               </td>
                               <td>
-                                <input name="entryname" value="0" />
+                                <input
+                                  name="Plastic bottles"
+                                  value="0"
+                                  type="number"
+                                  required
+                                />
                                 <span class="smallText">/ week</span>
                               </td>
                             </tr>
                             <tr>
                               <td class="label">
-                                <label class="smallText">Plastic bags</label>
+                                <label id="Plastic bags">Plastic bags</label>
                               </td>
                               <td>
-                                <input name="entryname" value="0" />
+                                <input
+                                  name="Plastic bags"
+                                  value="0"
+                                  type="number"
+                                  required
+                                />
                                 <span class="smallText">/ week</span>
                               </td>
                             </tr>
                             <tr>
                               <td class="label">
-                                <label label="smallText">Food wrapping</label>
+                                <label id="Food wrapping">Food wrapping</label>
                               </td>
                               <td>
-                                <input name="entryname" value="0" />
+                                <input
+                                  name="Food wrapping"
+                                  value="0"
+                                  type="number"
+                                  required
+                                />
                                 <span class="smallText">/ week</span>
                               </td>
                             </tr>
                             <tr>
                               <td class="label">
-                                <label class="smallText"
+                                <label id="Yogurt cream etc containers"
                                   >Yogurt, cream, etc. containers</label
                                 >
                               </td>
                               <td>
-                                <input name="entryname" value="0" />
+                                <input
+                                  name="Yogurt cream etc containers"
+                                  value="0"
+                                  type="number"
+                                  required
+                                />
                                 <span class="smallText">/ week</span>
                               </td>
                             </tr>
@@ -474,32 +496,49 @@
                           <tbody>
                             <tr>
                               <td class="label">
-                                <label class="smallText"
+                                <label id="Take away plastic boxes"
                                   >Take-away plastic boxes</label
                                 >
                               </td>
                               <td>
-                                <input name="entryname" value="0" />
+                                <input
+                                  name="Take away plastic boxes"
+                                  value="0"
+                                  type="number"
+                                  required
+                                />
                                 <span class="smallText">/ month</span>
                               </td>
                             </tr>
                             <tr>
                               <td class="label">
-                                <label class="smallText">Take-away cups</label>
+                                <label id="Take away cups"
+                                  >Take-away cups</label
+                                >
                               </td>
                               <td>
-                                <input name="entryname" value="0" />
+                                <input
+                                  name="Take away cups"
+                                  value="0"
+                                  type="number"
+                                  required
+                                />
                                 <span class="smallText">/ month</span>
                               </td>
                             </tr>
                             <tr>
                               <td class="label">
-                                <label class="smallText"
+                                <label id="Plastic wrapped packages"
                                   >Plastic-wrapped packages</label
                                 >
                               </td>
                               <td>
-                                <input name="entryname" value="0" />
+                                <input
+                                  name="Plastic wrapped packages"
+                                  value="0"
+                                  type="number"
+                                  required
+                                />
                                 <span class="smallText">/ month</span>
                               </td>
                             </tr>
@@ -516,43 +555,63 @@
                           <tbody>
                             <tr>
                               <td class="label">
-                                <label class="smallText"
+                                <label id="Detergent cleaning product bottles"
                                   >Detergent & cleaning product bottles</label
                                 >
                               </td>
                               <td>
-                                <input name="entryname" value="0" />
+                                <input
+                                  name="Detergent cleaning product bottles"
+                                  value="0"
+                                  type="number"
+                                  required
+                                />
                                 <span class="smallText">/ year</span>
                               </td>
                             </tr>
                             <tr>
                               <td class="label">
-                                <label class="smallText"
+                                <label id="Shampoo conditioner toiletries"
                                   >Shampoo, conditioner & toiletries</label
                                 >
                               </td>
                               <td>
-                                <input name="entryname" value="0" />
+                                <input
+                                  name="Shampoo conditioner toiletries"
+                                  value="0"
+                                  type="number"
+                                  required
+                                />
                                 <span class="smallText">/ year</span>
                               </td>
                             </tr>
                             <tr>
                               <td class="label">
-                                <label class="smallText"
+                                <label id="Plastic Toothbrushes"
                                   >Plastic toothbrushes</label
                                 >
                               </td>
                               <td>
-                                <input name="entryname" value="0" />
+                                <input
+                                  name="Plastic Toothbrushes"
+                                  value="0"
+                                  type="number"
+                                  required
+                                />
                                 <span class="smallText">/ year</span>
                               </td>
                             </tr>
                             <tr>
                               <td class="label">
-                                <label class="smallText">Toothpaste</label>
+                                <label id="Toothpaste">Toothpaste</label>
                               </td>
                               <td>
-                                <input name="entryname" value="0" />
+                                <input
+                                  name="Toothpaste"
+                                  value="0"
+                                  type="number"
+                                  required
+                                />
                                 <span class="smallText">/ year</span>
                               </td>
                             </tr>
@@ -569,16 +628,15 @@
                           <tbody>
                             <tr>
                               <td class="label">
-                                <label class="smallText"
+                                <label id="people"
                                   >With how many people do you share your
                                   household products?</label
                                 >
                               </td>
                               <td>
                                 <select
-                                  name="dtb"
+                                  name="no_of_people"
                                   style="vertical-align: middle"
-                                  id="no_of_people"
                                   onchange="numberOfPeople()"
                                 >
                                   <option selected="selected" value="1">
@@ -645,7 +703,7 @@
                     <tr class="table_footer">
                       <td class="cornerbottomleft">&nbsp;</td>
                       <td class="bottom">
-                        <button onclick="calculate()">
+                        <button onclick="resetCalculator()" type="button">
                           Reset calculator
                         </button>
                       </td>
