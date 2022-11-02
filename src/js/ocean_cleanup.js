@@ -154,7 +154,6 @@ document.addEventListener(
       inputFields[i].addEventListener(
         "focus",
         (event) => {
-          event.target.style.background = "red";
           event.target.value = "";
         },
         false

@@ -40,6 +40,7 @@ body {
   font-family: "Darker Grotesque", sans-serif;
   font-size: 24px;
   font-weight: 300;
+  text-shadow: 2px 2px 8px rgb(10, 9, 9);
 }
 
 .heading-primary-secondary {
@@ -83,10 +84,7 @@ body {
 }
 
 .navbar a {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 35px;
-  padding-right: 35px;
+  padding: 20px 35px;
   color: white;
   text-decoration: none;
   font-size: 17px;
@@ -122,11 +120,7 @@ body {
 }
 
 h2 {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-h2,
-.figure-captions {
+  padding: 20px 0px;
   font-size: 24px;
   font-weight: 400;
   font-family: "Special Elite", cursive;
@@ -136,13 +130,11 @@ h3 {
   font-size: 20px;
   font-weight: 400;
   font-family: "Special Elite", cursive;
-  padding-bottom: 10px;
-  padding-top: 10px;
+  padding: 10px 0px;
 }
 
 h4 {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 0px;
 }
 
 .content-italic {
@@ -153,6 +145,39 @@ h4 {
   padding-top: 40px;
   padding-bottom: 40px;
 }
+
+/* ------------------------------Start All Images and captions Styling ----------------------------------*/
+
+img {
+  width: 100%;
+}
+
+figure {
+  background-color: #fff;
+  box-shadow: 3px 4px 10px 0px black;
+  padding: 10px;
+  font-family: "Special Elite", cursive;
+}
+
+figure.image-2_container,
+figure.image-4_container{
+  transform: rotate(-3deg);
+}
+
+figure.image-3_container,
+figure.image-5_container {
+  transform: rotate(3deg);
+}
+
+figcaption {
+  font-size: 12px;
+  font-weight: 600;
+  color: gray;
+  text-align: right;
+}
+
+
+/* ------------------------------End All Images and captions Styling ------------------------------------*/
 
 /* ----------------Section 4 styling---------------- */
 .conainer_image-para-2 {
@@ -176,31 +201,8 @@ h4 {
   display: none;
 }
 
-div.image-2 {
-  background-color: #fff;
-  transform: rotate(-3deg);
-  box-shadow: 3px 4px 10px 0px black;
-  padding: 10px;
-}
-
 .image-2_para {
   padding-left: 30px;
-}
-
-div.image-2 img {
-  width: 100%;
-}
-
-div.image-2_captions {
-  text-align: center;
-  padding: 5px 0px;
-}
-
-div.image-2_captions p {
-  font-size: 15px;
-  font-weight: 600;
-  color: gray;
-  text-align: right;
 }
 /* ------------------------------------------------- */
 /* ------------------------------Tabel Data -1-------------------------------------- */
@@ -227,31 +229,6 @@ table {
 /* --------------------------------End---------------------------------------------- */
 
 /* -----------------------------Section-5------------------------------------------- */
-
-div.image-3_container {
-  background-color: #fff;
-  transform: rotate(3deg);
-  box-shadow: 3px 4px 10px 0px black;
-  position: relative;
-  padding-bottom: 35px;
-  padding-left: 10px;
-  padding-top: 10px;
-  padding-right: 10px;
-}
-
-div.image-3_container img {
-  width: 100%;
-  padding-bottom: 25px;
-}
-
-div.image-3_captions p {
-  font-size: 12px;
-  font-weight: 600;
-  color: gray;
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-}
 
 .section-5_flex_container_main {
   display: flex;
@@ -301,16 +278,6 @@ i {
 
 /* -----------------------------Section-7 Start --------------------------------------- */
 
-div.image-4_container img {
-  width: 100%;
-  padding-bottom: 25px;
-}
-
-div.image-5_container img {
-  width: 100%;
-  padding-bottom: 25px;
-}
-
 div.section-7_paragraph p {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -359,56 +326,13 @@ input {
   padding-bottom: 20px;
 }
 
-div.image-4_container,
-div.image-5_container {
-  background-color: #fff;
-  box-shadow: 3px 4px 10px 0px black;
-  position: relative;
-  padding: 10px;
-}
-
-div.image-4_container {
-  transform: rotate(-2deg);
-}
-
-div.image-5_container {
-  transform: rotate(2deg);
-}
-
-div.image-4_container img {
-  width: 100%;
-  padding-bottom: 25px;
-}
-
-div.image-5_container img {
-  width: 100%;
-  padding-bottom: 25px;
-}
-
-div.image-4_captions p {
-  font-size: 12px;
-  font-weight: 600;
-  color: gray;
-  position: absolute;
-  right: 10px;
-  bottom: 5px;
-}
-
-div.image-5_captions p {
-  font-size: 12px;
-  font-weight: 600;
-  color: gray;
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-}
-
 #Plastic_Recycling {
   padding-top: 20px;
   padding-bottom: 20px;
 }
 /* -----------------------------Section-7 End------------------------------------------- */
 /* -----------------------------Calculator----------------------------------------------- */
+
 .flex_container-2_secondary {
   flex: 10%;
   background-color: #fff6c6;
@@ -422,22 +346,7 @@ h4 {
   font-family: "Special Elite", cursive;
 }
 
-.Food_And_Kitchen tbody tr td {
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.Disposable_Containers_Packaging tbody tr td {
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.Bathroom_Laundry tbody tr td {
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.Household_size tbody tr td {
+#inner_Table tbody tr td{
   padding-top: 2px;
   padding-bottom: 2px;
 }
@@ -455,9 +364,9 @@ h4 {
   padding: 8px 16px;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button {  
-   opacity: 1;
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
 }
 /* -----------------------------Calculator----------------------------------------------- */
 
