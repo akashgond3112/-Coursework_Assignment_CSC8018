@@ -1,15 +1,15 @@
 const itemObject = {
-  "Plastic bottles": 0.73,
-  "Plastic bags": 0.417,
-  "Food wrapping": 0.583,
-  "Yogurt cream etc containers": 0.383,
-  "Take away plastic boxes": 0.383,
-  "Take away cups": 0.24,
-  "Plastic wrapped packages": 0.834,
-  "Detergent cleaning product bottles": 0.12,
-  "Shampoo conditioner toiletries": 0.08,
-  "Plastic Toothbrushes": 0.02,
-  Toothpaste: 0.01,
+  "Plastic bottles": { usageTime: "week", unit: 0.73 },
+  "Plastic bags": { usageTime: "week", unit: 0.417 },
+  "Food wrapping": { usageTime: "week", unit: 0.583 },
+  "Yogurt cream etc containers": { usageTime: "week", unit: 0.383 },
+  "Take away plastic boxes": { usageTime: "month", unit: 0.383 },
+  "Take away cups": { usageTime: "month", unit: 0.24 },
+  "Plastic wrapped packages": { usageTime: "month", unit: 0.834 },
+  "Detergent cleaning product bottles": { usageTime: "month", unit: 0.12 },
+  "Shampoo conditioner toiletries": { usageTime: "month", unit: 0.08 },
+  "Plastic Toothbrushes": { usageTime: "month", unit: 0.02 },
+  'Toothpaste': { usageTime: "month", unit: 0.01 },
 };
 
 const behaviourTip = {
@@ -31,7 +31,7 @@ const behaviourTip = {
     "Explore refill stations in your neighborhood to cut down on plastic waste from toiletries.",
   "Plastic toothbrushes":
     "Seriously? How often do you brush your teeth? Anyway, Did you know there are toothbrushes made from wood?",
-  Toothpaste:
+  "Toothpaste":
     "Seriously? How much toothpaste do you use? Did you know there are plastic-free alternatives available?",
 };
 
@@ -42,7 +42,13 @@ const inputFields = document.querySelectorAll('input[type="number"]');
 
 const tipElement = document.querySelector(".unknown-sources");
 
+const totalPlasticWasteAmount = document.querySelector(
+  ".totalPlasticWasteAmount"
+);
+
 const userInputData = new Map();
+
+let totalSum = 0;
 
 /* 
 To get the item that accounts for the highest amount of plastic waste.
@@ -54,15 +60,73 @@ function gethighestAmountOfWaste() {
 
   console.log(`"Max:" ${highestAmountOfWaste}`);
   updateTip(highestAmountOfWaste[0]);
+  calculateEstimatedPlasticFootPrints();
+  updatePlasticWasteData(totalSum);
 }
 
 /* 
-Update the tip.
-*/
 
+*/
+function calculateEstimatedPlasticFootPrints() {
+  const filterData = [...userInputData.entries()].filter(function (userInput) {
+    return userInput[1] > 0 && userInput[0] !== "no_of_people";
+  });
+
+  for (let data in filterData) {
+    let tempData = filterData[data];
+    console.log(`tempData ${tempData}`);
+
+    const item = itemObject[tempData[0]];
+    console.log(` item: ${item}`);
+
+    switch (item["usageTime"]) {
+      case "week":
+        totalSum += tempData[1] * 52 * item["unit"];
+        // code block
+        break;
+      case "month":
+        // code block
+        break;
+      case "year":
+        // code block
+        break;
+      default:
+      // code block
+    }
+  }
+
+  console.log(`number of people: ${getNumberOfPeople()}`);
+
+  if (getNumberOfPeople() > 1) {
+    totalSum = totalSum / getNumberOfPeople();
+  }
+
+  console.log(`Total Sum: ${totalSum}`);
+}
+
+/* 
+This function is to Update the tip in the dom 
+its expect one of the following values called tip
+which is going to be updated in the DOMContent
+*/
 function updateTip(tip) {
   console.log(`New tip: ${tip}`);
   tipElement.innerText = tip;
+}
+
+/* 
+This function is to Update the amount of plastic waste
+used per by the user kg/year
+which is going to be updated in the DOMContent
+*/
+
+function updatePlasticWasteData(totalPlasticWaste) {
+  console.log(
+    `totalPlasticWaste: ${roundTotalSumUpToTwoDecimals(totalPlasticWaste)}`
+  );
+  totalPlasticWasteAmount.innerText = `${roundTotalSumUpToTwoDecimals(
+    totalPlasticWaste
+  )} kg / year.`;
 }
 
 /* 
@@ -73,12 +137,14 @@ function getDataForm(e) {
   e.preventDefault();
 
   var formData = new FormData(form[0]);
+  console.log(`form data: ${formData}`);
+
   for (var pair of formData.entries()) {
-    if (!pair[0] != "no_of_people") {
+    if (!pair[0] !== "no_of_people") {
       userInputData.set(pair[0], pair[1]);
     }
   }
-  console.log(userInputData);
+
   gethighestAmountOfWaste();
 }
 
@@ -106,13 +172,18 @@ function resetCalculator() {
   let i;
   for (i = 0; i < x.length; i++) {
     x.elements[i].value = "";
-    // for (const attr of x.elements[i].attributes) {
-    //   console.log(`${attr.name} -> ${attr.value}\n`);
-    // }
   }
 }
 
-function numberOfPeople() {
-  peopleCount = document.forms[0].no_of_people.value;
-  alert("Number of Peopel are : " + peopleCount);
+function getNumberOfPeople() {
+  return document.forms[0].no_of_people.value;
+}
+
+function caculateDataBasedOnNumberOfPeople() {
+  console.log(`New totalSum ${totalSum / getNumberOfPeople()}}`);
+  updatePlasticWasteData(totalSum / getNumberOfPeople());
+}
+
+function roundTotalSumUpToTwoDecimals(totalSum) {
+  return Number.parseFloat(totalSum).toFixed(2);
 }

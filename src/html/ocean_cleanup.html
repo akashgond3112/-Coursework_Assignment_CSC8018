@@ -628,16 +628,18 @@
                           <tbody>
                             <tr>
                               <td class="label">
-                                <label id="people"
+                                <label id="no_of_people"
                                   >With how many people do you share your
                                   household products?</label
                                 >
                               </td>
                               <td>
                                 <select
+                                title="number of people"
                                   name="no_of_people"
                                   style="vertical-align: middle"
-                                  onchange="numberOfPeople()"
+                                  onchange="caculateDataBasedOnNumberOfPeople()"
+                                  type="number"
                                 >
                                   <option selected="selected" value="1">
                                     1
@@ -671,7 +673,7 @@
                             </tr>
                             <tr>
                               <td>
-                                <span class="smallText">0 kg / year.</span>
+                                <span class="totalPlasticWasteAmount">0 kg / year.</span>
                               </td>
                             </tr>
                           </tbody>
