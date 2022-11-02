@@ -82,13 +82,12 @@ function calculateEstimatedPlasticFootPrints() {
     switch (item["usageTime"]) {
       case "week":
         totalSum += tempData[1] * 52 * item["unit"];
-        // code block
         break;
       case "month":
-        // code block
+        totalSum += tempData[1] * 12 * item["unit"];
         break;
       case "year":
-        // code block
+        totalSum += tempData[1] * item["unit"];
         break;
       default:
       // code block
