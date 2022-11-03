@@ -471,4 +471,15 @@ footer {
   .flex_container-2_secondary {
     flex-direction: column;
   }
+
+  footer{
+    height: 50vh;
+  }
+  
+  .footer-main {
+    position: absolute;
+    bottom: 35%;
+    left: 35%;
+    transform: translate(-20%, -20%);
+}
 }
