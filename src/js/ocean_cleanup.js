@@ -78,20 +78,7 @@ function calculateEstimatedPlasticFootPrints() {
 
     const item = itemObject[tempData[0]];
     console.log(` item: ${item}`);
-
-    switch (item["usageTime"]) {
-      case "week":
-        totalSum += tempData[1] * 52 * item["unit"];
-        break;
-      case "month":
-        totalSum += tempData[1] * 12 * item["unit"];
-        break;
-      case "year":
-        totalSum += tempData[1] * item["unit"];
-        break;
-      default:
-      // code block
-    }
+    totalSum += tempData[1] * item["unit"];
   }
 
   console.log(`number of people: ${getNumberOfPeople()}`);
@@ -171,6 +158,9 @@ function resetCalculator() {
   for (i = 0; i < x.length; i++) {
     x.elements[i].value = "";
   }
+
+  totalSum = 0; // setting the total sum to 
+  updatePlasticWasteData(totalSum); // i.e will be set to 0
 }
 
 function getNumberOfPeople() {
