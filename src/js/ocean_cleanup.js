@@ -65,7 +65,9 @@ function gethighestAmountOfWaste() {
 }
 
 /* 
-
+Calculate the estimated foot print , we will get all input fields value those are non zero
+and also we will skip the number of people value,and then total the sum of all.
+If number of people is more than 1 then we will divide the total by the number of people.
 */
 function calculateEstimatedPlasticFootPrints() {
   const filterData = [...userInputData.entries()].filter(function (userInput) {
@@ -74,20 +76,14 @@ function calculateEstimatedPlasticFootPrints() {
 
   for (let data in filterData) {
     let tempData = filterData[data];
-    console.log(`tempData ${tempData}`);
 
     const item = itemObject[tempData[0]];
-    console.log(` item: ${item}`);
     totalSum += tempData[1] * item["unit"];
   }
-
-  console.log(`number of people: ${getNumberOfPeople()}`);
 
   if (getNumberOfPeople() > 1) {
     totalSum = totalSum / getNumberOfPeople();
   }
-
-  console.log(`Total Sum: ${totalSum}`);
 }
 
 /* 
@@ -123,7 +119,6 @@ function getDataForm(e) {
   e.preventDefault();
 
   var formData = new FormData(form[0]);
-  console.log(`form data: ${formData}`);
 
   for (var pair of formData.entries()) {
     if (!pair[0] !== "no_of_people") {
@@ -134,6 +129,9 @@ function getDataForm(e) {
   gethighestAmountOfWaste();
 }
 
+/* 
+Add event listeners to the form and all the input fields.
+*/
 document.addEventListener(
   "DOMContentLoaded",
   function () {
@@ -152,6 +150,9 @@ document.addEventListener(
   false
 );
 
+/* 
+Add the event listeners to the reset button in order to reset the form.
+*/
 function resetCalculator() {
   const x = document.getElementById("updateForm");
   let i;
@@ -163,15 +164,19 @@ function resetCalculator() {
   updatePlasticWasteData(totalSum); // i.e will be set to 0
 }
 
+/* Get the numer of people */
 function getNumberOfPeople() {
   return document.forms[0].no_of_people.value;
 }
 
+
+/* Calaclate the the totalsum based on the number of value. */
 function caculateDataBasedOnNumberOfPeople() {
   console.log(`New totalSum ${totalSum / getNumberOfPeople()}}`);
   updatePlasticWasteData(totalSum / getNumberOfPeople());
 }
 
+/* Round the totalsum upto 2 decimal places */
 function roundTotalSumUpToTwoDecimals(totalSum) {
   return Number.parseFloat(totalSum).toFixed(2);
 }
