@@ -7,7 +7,7 @@
 body {
   font-family: "EB Garamond", sans-serif;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.5;
   color: #333;
 }
@@ -134,7 +134,11 @@ h3 {
 }
 
 h4 {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Special Elite", cursive;
   padding: 10px 0px;
+
 }
 
 .content-italic {
@@ -284,7 +288,7 @@ div.section-7_paragraph p {
 }
 
 input {
-  width: 35%;
+  width: 50%;
 }
 
 .flex_container-2_main,
@@ -340,12 +344,6 @@ input {
   padding-left: 10px;
 }
 
-h4 {
-  font-size: 20px;
-  font-weight: 400;
-  font-family: "Special Elite", cursive;
-}
-
 #inner_Table tbody tr td{
   padding-top: 2px;
   padding-bottom: 2px;
@@ -359,15 +357,21 @@ h4 {
   background-color: #fff3b3;
   border-color: #fff3b3;
   border-radius: 6px;
-  width: 55%;
+  width: 120%;
   text-align: center;
-  padding: 8px 16px;
+  padding: 8px 8px;
+}
+
+table tbody tr th,h4,h3,span{
+text-align: left;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   opacity: 1;
 }
+
+
 /* -----------------------------Calculator----------------------------------------------- */
 
 /* -------------------------------footer------------------------------------------------- */

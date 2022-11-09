@@ -385,236 +385,200 @@
         <div class="flex_container-2_secondary">
           <div id="calculator">
             <div>
-              <form id="updateForm" class="updateForm">
-                <table class="table-data_2">
-                  <tbody>
-                    <tr class="table_header">
-                      <td class="left">&nbsp;</td>
-                      <td>
-                        <h3>Check Your Own Plastic Footprint</h3>
-                      </td>
-                      <td class="right">&nbsp;</td>
-                    </tr>
-                    <tr class="Food_And_Kitchen_main">
-                      <td class="left">&nbsp;</td>
-                      <td class="content">
-                        <h4>Food & Kitchen</h4>
-                        <table id="inner_Table" class="Food_And_Kitchen">
-                          <tbody>
-                            <tr>
-                              <td class="label">
-                                <label id="Plastic bottles">Plastic bottles</label>
-                              </td>
-                              <td>
-                                <input name="Plastic bottles" value="0" type="number" required />
-                                <span class="smallText">/ week</span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="label">
-                                <label id="Plastic bags">Plastic bags</label>
-                              </td>
-                              <td>
-                                <input name="Plastic bags" value="0" type="number" required />
-                                <span class="smallText">/ week</span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="label">
-                                <label id="Food wrapping">Food wrapping</label>
-                              </td>
-                              <td>
-                                <input name="Food wrapping" value="0" type="number" required />
-                                <span class="smallText">/ week</span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="label">
-                                <label id="Yogurt cream etc containers">Yogurt, cream, etc. containers</label>
-                              </td>
-                              <td>
-                                <input name="Yogurt cream etc containers" value="0" type="number" required />
-                                <span class="smallText">/ week</span>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                      <td class="right">&nbsp;</td>
-                    </tr>
-                    <tr class="Disposable_Containers_And_Packaging_main">
-                      <td class="left">&nbsp;</td>
-                      <td class="content">
-                        <h4>Disposable Containers & Packaging</h4>
-                        <table id="inner_Table" class="Disposable_Containers_Packaging">
-                          <tbody>
-                            <tr>
-                              <td class="label">
-                                <label id="Take away plastic boxes">Take-away plastic boxes</label>
-                              </td>
-                              <td>
-                                <input name="Take away plastic boxes" value="0" type="number" required />
-                                <span class="smallText">/ month</span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="label">
-                                <label id="Take away cups">Take-away cups</label>
-                              </td>
-                              <td>
-                                <input name="Take away cups" value="0" type="number" required />
-                                <span class="smallText">/ month</span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="label">
-                                <label id="Plastic wrapped packages">Plastic-wrapped packages</label>
-                              </td>
-                              <td>
-                                <input name="Plastic wrapped packages" value="0" type="number" required />
-                                <span class="smallText">/ month</span>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                      <td class="right">&nbsp;</td>
-                    </tr>
-                    <tr class="Bathroom_And_Laundry_main">
-                      <td class="left">&nbsp;</td>
-                      <td class="content">
-                        <h4>Bathroom & Laundry</h4>
-                        <table id="inner_Table" class="Bathroom_Laundry">
-                          <tbody>
-                            <tr>
-                              <td class="label">
-                                <label id="Detergent cleaning product bottles">Detergent & cleaning product
-                                  bottles</label>
-                              </td>
-                              <td>
-                                <input name="Detergent cleaning product bottles" value="0" type="number" required />
-                                <span class="smallText">/ year</span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="label">
-                                <label id="Shampoo conditioner toiletries">Shampoo, conditioner & toiletries</label>
-                              </td>
-                              <td>
-                                <input name="Shampoo conditioner toiletries" value="0" type="number" required />
-                                <span class="smallText">/ year</span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="label">
-                                <label id="Plastic Toothbrushes">Plastic toothbrushes</label>
-                              </td>
-                              <td>
-                                <input name="Plastic Toothbrushes" value="0" type="number" required />
-                                <span class="smallText">/ year</span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="label">
-                                <label id="Toothpaste">Toothpaste</label>
-                              </td>
-                              <td>
-                                <input name="Toothpaste" value="0" type="number" required />
-                                <span class="smallText">/ year</span>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                      <td class="right">&nbsp;</td>
-                    </tr>
-                    <tr class="Household_size_main">
-                      <td class="left">&nbsp;</td>
-                      <td class="content">
-                        <h4>Household size</h4>
-                        <table id="inner_Table" class="Household_size">
-                          <tbody>
-                            <tr>
-                              <td class="label">
-                                <label id="no_of_people">With how many people do you share your
-                                  household products?</label>
-                              </td>
-                              <td>
-                                <select title="number of people" name="no_of_people" style="vertical-align: middle"
-                                  onchange="caculateDataBasedOnNumberOfPeople()" type="number">
-                                  <option selected="selected" value="1">
-                                    1
-                                  </option>
-                                  <option value="2">2</option>
-                                  <option value="3">3</option>
-                                  <option value="4">4</option>
-                                  <option value="5">5</option>
-                                  <option value="6">6</option>
-                                  <option value="7">7</option>
-                                </select>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                      <td class="right">&nbsp;</td>
-                    </tr>
-                    <tr class="Your_Plastic_Footprint_main">
-                      <td class="left">&nbsp;</td>
-                      <td class="content">
-                        <h4>Your Plastic Footprint</h4>
-                        <table width="100%">
-                          <tbody>
-                            <tr>
-                              <td class="label">
-                                <span class="smallText">
-                                  Your estimated plastic footprint is
-                                </span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <span class="totalPlasticWasteAmount">0 kg / year.</span>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                      <td class="right">&nbsp;</td>
-                    </tr>
-                    <tr class="Tip_main">
-                      <td class="left">&nbsp;</td>
-                      <td class="content">
-                        <h4>Tip</h4>
-                        <table width="100%">
-                          <tbody>
-                            <tr>
-                              <td class="label">
-                                <label class="smallText">
-                                  Most of your plastic waste originates from
-                                </label>
-                                <span class="smallText unknown-sources">
-                                  unknown sources.
-                                </span>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                      <td class="right">&nbsp;</td>
-                    </tr>
-                    <tr class="table_footer">
-                      <td class="cornerbottomleft">&nbsp;</td>
-                      <td class="bottom">
-                        <button onclick="resetCalculator()" type="button">
-                          Reset calculator
-                        </button>
-                      </td>
-                      <td class="cornerbottomright">&nbsp;</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </form>
+
+              <!-- New Form Start-->
+              <table class="table-data_2">
+                <form id="updateForm" class="updateForm">
+                  <tr class="table_header">
+                    <th colspan="2">
+                      <h3>Check Your Own Plastic Footprint</h3>
+                    </th>
+                  </tr>
+                  <!--  Food_And_Kitchen_main-->
+                  <tr>
+                    <th colspan="2">
+                      <h4>Food & Kitchen</h4>
+                    </th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label id="Plastic bottles">Plastic bottles</label>
+                    </td>
+                    <td><input name="Plastic bottles" value="0" type="number" required />
+                      <span class="smallText">/ week</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label id="Plastic bags">Plastic bags</label>
+                    </td>
+                    <td><input name="Plastic bags" value="0" type="number" required />
+                      <span class="smallText">/ week</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label id="Food wrapping">Food wrapping</label>
+                    </td>
+                    <td><input name="Food wrapping" value="0" type="number" required />
+                      <span class="smallText">/ week</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="label"><label id="Yogurt cream etc containers">Yogurt, cream, etc. containers</label>
+                    </td>
+                    <td><input name="Yogurt cream etc containers" value="0" type="number" required />
+                      <span class="smallText">/ week</span>
+                    </td>
+                  </tr>
+                  <!-- Disposable_Containers_And_Packaging_main -->
+                  <tr>
+                    <th colspan="2">
+                      <h4>Disposable Containers & Packaging</h4>
+                    </th>
+                  </tr>
+                  <tr>
+                    <td class="label">
+                      <label id="Take away plastic boxes">Take-away plastic boxes</label>
+                    </td>
+                    <td>
+                      <input name="Take away plastic boxes" value="0" type="number" required />
+                      <span class="smallText">/ month</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="label">
+                      <label id="Take away cups">Take-away cups</label>
+                    </td>
+                    <td>
+                      <input name="Take away cups" value="0" type="number" required />
+                      <span class="smallText">/ month</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="label">
+                      <label id="Plastic wrapped packages">Plastic-wrapped packages</label>
+                    </td>
+                    <td>
+                      <input name="Plastic wrapped packages" value="0" type="number" required />
+                      <span class="smallText">/ month</span>
+                    </td>
+                  </tr>
+                  <!-- Bathroom_And_Laundry_main -->
+                  <tr>
+                    <th colspan="2">
+                      <h4>Bathroom & Laundry</h4>
+                    </th>
+                  </tr>
+                  <tr>
+                    <td class="label">
+                      <label id="Detergent cleaning product bottles">Detergent & cleaning product
+                        bottles</label>
+                    </td>
+                    <td>
+                      <input name="Detergent cleaning product bottles" value="0" type="number" required />
+                      <span class="smallText">/ year</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="label">
+                      <label id="Shampoo conditioner toiletries">Shampoo, conditioner & toiletries</label>
+                    </td>
+                    <td>
+                      <input name="Shampoo conditioner toiletries" value="0" type="number" required />
+                      <span class="smallText">/ year</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="label">
+                      <label id="Plastic Toothbrushes">Plastic toothbrushes</label>
+                    </td>
+                    <td>
+                      <input name="Plastic Toothbrushes" value="0" type="number" required />
+                      <span class="smallText">/ year</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="label">
+                      <label id="Toothpaste">Toothpaste</label>
+                    </td>
+                    <td>
+                      <input name="Toothpaste" value="0" type="number" required />
+                      <span class="smallText">/ year</span>
+                    </td>
+                  </tr>
+                  <!-- Household_size_main -->
+                  <tr>
+                    <th colspan="2">
+                      <h4>Household size</h4>
+                    </th>
+                  </tr>
+                  <tr>
+                    <td class="label" colspan="2">
+                      <label id="no_of_people">With how many people do you share your
+                        household products?</label>
+                    </td>
+                    <td colspan="2">
+                      <select title="number of people" name="no_of_people" style="vertical-align: middle"
+                        onchange="caculateDataBasedOnNumberOfPeople()" type="number">
+                        <option selected="selected" value="1">
+                          1
+                        </option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <!-- Your_Plastic_Footprint_main -->
+                  <tr>
+                    <th colspan="2">
+                      <h4>Your Plastic Footprint</h4>
+                    </th>
+                  </tr>
+                  <tr>
+                    <td colspan="2" class="label">
+                      <span class="smallText">
+                        Your estimated plastic footprint is
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="2">
+                      <span class="totalPlasticWasteAmount">0 kg / year.</span>
+                    </th>
+                  </tr>
+                  <!-- Tip_main -->
+                  <tr>
+                    <th colspan="2">
+                      <h4>Tip</h4>
+                    </th>
+
+                  </tr>
+                  <tr>
+                    <td colspan="2" class="label">
+                      <label class="smallText">
+                        Most of your plastic waste originates <br>from
+                      </label>
+                      <strong class="smallText unknown-sources">
+                        unknown sources.
+                      </strong>
+                    </td>
+                  </tr>
+                  <!-- table_footer -->
+                  <tr class="table_footer">
+                    <td class="cornerbottomleft">&nbsp;</td>
+                    <td class="bottom">
+                      <button onclick="resetCalculator()" type="button">
+                        Reset calculator
+                      </button>
+                    </td>
+                    <td class="cornerbottomright">&nbsp;</td>
+                  </tr>
+                </form>
+              </table>
+              <!-- New Form End-->
             </div>
           </div>
         </div>
