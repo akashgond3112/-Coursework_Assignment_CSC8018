@@ -6,10 +6,32 @@
 
 body {
   font-family: "EB Garamond", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 15px;
   line-height: 1.5;
   color: #333;
+  clear: both;
+}
+
+h2 {
+  padding: 20px 0px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Special Elite", cursive;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Special Elite", cursive;
+  padding: 10px 0px;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Special Elite", cursive;
+  padding: 10px 0px;
 }
 
 /* ----------------------Header-Start---------------------------------------------- */
@@ -100,6 +122,10 @@ body {
 .navbar a:hover {
   color: #048376;
 }
+
+.dropdown-content {
+  display: none;
+}
 /* ----------------------NavBar-End---------------------------------------------- */
 
 .container {
@@ -117,28 +143,6 @@ body {
 .videos object,
 .video embed {
   width: 100%;
-}
-
-h2 {
-  padding: 20px 0px;
-  font-size: 24px;
-  font-weight: 400;
-  font-family: "Special Elite", cursive;
-}
-
-h3 {
-  font-size: 20px;
-  font-weight: 400;
-  font-family: "Special Elite", cursive;
-  padding: 10px 0px;
-}
-
-h4 {
-  font-size: 20px;
-  font-weight: 400;
-  font-family: "Special Elite", cursive;
-  padding: 10px 0px;
-
 }
 
 .content-italic {
@@ -164,7 +168,7 @@ figure {
 }
 
 figure.image-2_container,
-figure.image-4_container{
+figure.image-4_container {
   transform: rotate(-3deg);
 }
 
@@ -180,13 +184,15 @@ figcaption {
   text-align: right;
 }
 
+/* ---------------------------End All Images and captions Styling -----------------------*/
 
-/* ------------------------------End All Images and captions Styling ------------------------------------*/
+/* -----------------------------Section-4-start----------------------------------------- */
 
-/* ----------------Section 4 styling---------------- */
-.conainer_image-para-2 {
-  display: flex;
-  flex-direction: row;
+.image-2_container {
+  width: 40%;
+  float: left;
+  margin-right: 50px;
+  margin-bottom: 15px;
 }
 
 .conainer_image-para-1 {
@@ -198,25 +204,21 @@ figcaption {
   padding-bottom: 20px;
 }
 
-.conainer_image-para-2 .column {
-  flex: 50%;
-}
-.dropdown-content {
-  display: none;
-}
-
 .image-2_para {
   padding-left: 30px;
 }
-/* ------------------------------------------------- */
-/* ------------------------------Tabel Data -1-------------------------------------- */
+/* ------------------------------Section-4-End-------------------------------------- */
+/* ------------------------------Section 5 Start-------------------------------------- */
 caption {
   border-top: 2px solid;
   border-bottom: 2px solid;
 }
 .table-data_1 {
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
+  clear: both;
 }
 .table-data_1 colgroup {
   text-decoration: overline;
@@ -230,39 +232,26 @@ table {
   border-collapse: collapse;
 }
 
-/* --------------------------------End---------------------------------------------- */
+/* --------------------------------Section-5-End--------------------------------------- */
 
-/* -----------------------------Section-5------------------------------------------- */
+/* --------------------------------Section-6-start------------------------------------------ */
 
-.section-5_flex_container_main {
-  display: flex;
-  flex-direction: row;
-}
-
-.section-5_flex_container-2 {
-  display: flex;
-  flex-direction: column;
-}
-
-.section-5_flex_container_1 {
-  order: 2;
-  flex: 25%;
-}
-
-.section-5_flex_container-2 {
-  order: 1;
-  flex: 55%;
-  padding-right: 10px;
+.image-3_container {
+  width: 30%;
+  float: right;
+  margin-bottom: 40px;
+  margin-left: 40px;
 }
 
 .section-5_container_flex-2,
-.section-5_container_flex-3 {
+.section-5_container_flex-3,
+.section-5_container_flex-4 {
   padding-bottom: 10px;
 }
 
-/* -----------------------------Section-5 End --------------------------------------- */
+/* -----------------------------Section-6-End------------------------------------------- */
 
-/* -----------------------------Section-6 Start --------------------------------------- */
+/* -----------------------------Section-7-Start----------------------------------------- */
 .quote_2 {
   text-align: center;
 }
@@ -278,22 +267,32 @@ i {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-/* -----------------------------Section-6 End ----------------------------------------- */
+/* -----------------------------Section-7-End------------------------------------------- */
 
-/* -----------------------------Section-7 Start --------------------------------------- */
+/* -----------------------------Section-8-Start----------------------------------------- */
 
-div.section-7_paragraph p {
+.image-4_container,
+.image-5_container {
+  width: 44%;
+  margin-bottom: 40px;
+}
+
+.image-4_container {
+  float: left;
+  margin-right: 40px;
+}
+
+.image-5_container {
+  float: right;
+  margin-left: 40px;
+}
+
+.section-8 p {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-input {
-  width: 50%;
-}
-
-.flex_container-2_main,
-.section-7_flex_container-primary,
-.section-7_flex_container-secondary {
+.flex_container-2_main {
   display: flex;
   flex-direction: row;
   gap: 2rem;
@@ -301,28 +300,6 @@ input {
 
 .flex_container-2_primary {
   flex: 50%;
-}
-
-.section-7_flex_container_1,
-.section-7_flex_container_2 {
-  flex: 20%;
-}
-
-.section-7_flex_container_3 {
-  order: 2;
-  flex: 0%;
-}
-
-.section-7_flex_container_4 {
-  display: flex;
-  flex-direction: column;
-  order: 1;
-  padding-right: 20px;
-  flex: 15%;
-}
-
-.section-7_flex_container_2 {
-  flex: 15%;
 }
 
 .section-7_flex_container_4_primary,
@@ -334,8 +311,11 @@ input {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-/* -----------------------------Section-7 End------------------------------------------- */
-/* -----------------------------Calculator----------------------------------------------- */
+/* -----------------------------Section-8--End------------------------------------------- */
+/* --------------------------------Calculator-Start----------------------------------------- */
+input {
+  width: 50%;
+}
 
 .flex_container-2_secondary {
   flex: 10%;
@@ -344,9 +324,8 @@ input {
   padding-left: 10px;
 }
 
-#inner_Table tbody tr td{
-  padding-top: 2px;
-  padding-bottom: 2px;
+table tr td {
+  padding: 1px;
 }
 
 .bottom {
@@ -362,8 +341,11 @@ input {
   padding: 8px 8px;
 }
 
-table tbody tr th,h4,h3,span{
-text-align: left;
+table tr th,
+h4,
+h3,
+span {
+  text-align: left;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -371,13 +353,12 @@ input[type="number"]::-webkit-outer-spin-button {
   opacity: 1;
 }
 
-
 /* -----------------------------Calculator----------------------------------------------- */
 
 /* -------------------------------footer------------------------------------------------- */
 
 footer {
-  height: 15vh;
+  height: 20vh;
   background-image: url(../img/ocean.jpg);
   background-size: cover;
   background-position: right;
@@ -386,15 +367,17 @@ footer {
 
 .footer-main {
   position: absolute;
-  bottom: 25%;
-  left: 25%;
+  bottom: 35%;
+  left: 35%;
+  transform: translate(-20%, -20%);
 }
 
 .footer-main a {
   color: inherit;
 }
 /* -------------------------------------------------------------------------------------- */
-@media (max-width: 800px) {
+/* On screens that are 700px wide or less*/
+@media screen and (max-width: 700px) {
   .container,
   .container-2 {
     padding-left: 5%;
@@ -446,8 +429,9 @@ footer {
     height: 250%;
   }
 
-  .conainer_image-para-2 {
-    flex-direction: column;
+  .image {
+    width: 100%;
+    clear: both;
   }
 
   .image-2_para {
@@ -455,35 +439,23 @@ footer {
     padding-left: 0px;
   }
 
-  .section-5_flex_container_main {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .section-5_flex_container_1 {
-    order: 1;
-  }
-
-  .section-5_flex_container-2 {
-    order: 2;
-    padding-top: 20px;
-  }
-
   .flex_container-2_main,
-  .section-7_flex_container-primary,
-  .section-7_flex_container-secondary,
   .flex_container-2_secondary {
     flex-direction: column;
   }
 
-  footer{
+  table tr td {
+    padding: 0px;
+  }
+
+  footer {
     height: 50vh;
   }
-  
+
   .footer-main {
     position: absolute;
     bottom: 35%;
     left: 35%;
     transform: translate(-20%, -20%);
-}
+  }
 }
