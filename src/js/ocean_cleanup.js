@@ -157,7 +157,12 @@ function resetCalculator() {
   const x = document.getElementById("updateForm");
   let i;
   for (i = 0; i < x.length; i++) {
-    x.elements[i].value = "";
+    console.log(x.elements[i].tagName);
+    if (x.elements[i].tagName === "INPUT") {
+      x.elements[i].value = "0";
+    } else if (x.elements[i].tagName === "SELECT") {
+      x.elements[i].value = "1";
+    }
   }
 
   totalSum = 0; // setting the total sum to 
