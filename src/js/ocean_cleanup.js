@@ -167,6 +167,7 @@ function resetCalculator() {
 
   totalSum = 0; // setting the total sum to 
   updatePlasticWasteData(totalSum); // i.e will be set to 0
+  updateTip("unknown sources");
 }
 
 /* Get the numer of people */
