@@ -360,6 +360,11 @@ input[type="number"]::-webkit-outer-spin-button {
   opacity: 1;
 }
 
+.input_error {
+	color: #D8000C;
+	background-color: #FFBABA;
+}
+
 /* -----------------------------Calculator----------------------------------------------- */
 
 /* -------------------------------footer------------------------------------------------- */

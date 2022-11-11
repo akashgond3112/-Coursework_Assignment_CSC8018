@@ -9,7 +9,7 @@ const itemObject = {
   "Detergent cleaning product bottles": { usageTime: "month", unit: 0.12 },
   "Shampoo conditioner toiletries": { usageTime: "month", unit: 0.08 },
   "Plastic Toothbrushes": { usageTime: "month", unit: 0.02 },
-  'Toothpaste': { usageTime: "month", unit: 0.01 },
+  "Toothpaste": { usageTime: "month", unit: 0.01 },
 };
 
 const behaviourTip = {
@@ -113,15 +113,13 @@ function updatePlasticWasteData(totalPlasticWaste) {
 
 /* 
 The behaviour of this function is to get all the input fields
-data from the form and add them to the temp list.
+data from the form whose value is greater than 0 and add them to the temp list.
 */
-function getDataForm(e) {
-  e.preventDefault();
-
+function getDataForm() {
   var formData = new FormData(form[0]);
 
   for (var pair of formData.entries()) {
-    if (!pair[0] !== "no_of_people") {
+    if (pair[0] !== "no_of_people" && pair[1] > 0) {
       userInputData.set(pair[0], pair[1]);
     }
   }
@@ -132,23 +130,41 @@ function getDataForm(e) {
 /* 
 Add event listeners to the form and all the input fields.
 */
-document.addEventListener(
-  "DOMContentLoaded",
-  function () {
-    for (var i = 0; i < inputFields.length; i++) {
-      inputFields[i].addEventListener(
-        "focus",
-        (event) => {
-          event.target.value = "";
-        },
-        false
-      );
+document.addEventListener("DOMContentLoaded", function () {
+  for (var i = 0; i < inputFields.length; i++) {
+    // Once user ckick on the input field set clear the input field
+    inputFields[i].addEventListener(
+      "focus",
+      (event) => {
+        event.target.value = "";
+        if (event.target.getAttribute("class") !== null) {
+          event.target.removeAttribute("class");
+        }
+      },
+      false
+    );
 
-      inputFields[i].addEventListener("blur", getDataForm, false);
-    }
-  },
-  false
-);
+    let isInputValid = false;
+
+    inputFields[i].addEventListener("blur", (event) => {
+      event.target.removeAttribute("class");
+      isInputValid = validateInputFields(event); // check if the input value is not empty and not less than 0
+      if (isInputValid) {
+        getDataForm();
+      } else {
+        event.target.setAttribute("class", "input_error");
+      }
+    });
+  }
+});
+
+function validateInputFields(event) {
+  if (event.target.value > 0 && event.target.value.length > 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 /* 
 Add the event listeners to the reset button in order to reset the form.
@@ -165,7 +181,7 @@ function resetCalculator() {
     }
   }
 
-  totalSum = 0; // setting the total sum to 
+  totalSum = 0; // setting the total sum to
   updatePlasticWasteData(totalSum); // i.e will be set to 0
   updateTip("unknown sources");
 }
