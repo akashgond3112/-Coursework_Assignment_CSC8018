@@ -9,7 +9,7 @@ const itemObject = {
   "Detergent cleaning product bottles": { usageTime: "month", unit: 0.12 },
   "Shampoo conditioner toiletries": { usageTime: "month", unit: 0.08 },
   "Plastic Toothbrushes": { usageTime: "month", unit: 0.02 },
-  "Toothpaste": { usageTime: "month", unit: 0.01 },
+  Toothpaste: { usageTime: "month", unit: 0.01 },
 };
 
 const behaviourTip = {
@@ -31,7 +31,7 @@ const behaviourTip = {
     "Explore refill stations in your neighborhood to cut down on plastic waste from toiletries.",
   "Plastic toothbrushes":
     "Seriously? How often do you brush your teeth? Anyway, Did you know there are toothbrushes made from wood?",
-  "Toothpaste":
+  Toothpaste:
     "Seriously? How much toothpaste do you use? Did you know there are plastic-free alternatives available?",
 };
 
@@ -58,7 +58,7 @@ function gethighestAmountOfWaste() {
     e[1] > a[1] ? e : a
   );
 
-  console.log(`"Max:" ${highestAmountOfWaste}`);
+  // console.log(`"Max:" ${highestAmountOfWaste}`);
   updateTip(highestAmountOfWaste[0]);
   calculateEstimatedPlasticFootPrints();
   updatePlasticWasteData(totalSum);
@@ -70,16 +70,15 @@ and also we will skip the number of people value,and then total the sum of all.
 If number of people is more than 1 then we will divide the total by the number of people.
 */
 function calculateEstimatedPlasticFootPrints() {
-  const filterData = [...userInputData.entries()].filter(function (userInput) {
-    return userInput[1] > 0 && userInput[0] !== "no_of_people";
-  });
+  const filterData = [...userInputData.entries()];
 
   for (let data in filterData) {
     let tempData = filterData[data];
+    // console.log("total data for : " + tempData[0] + " - " + tempData[1]);
 
-    const item = itemObject[tempData[0]];
-    totalSum += tempData[1] * item["unit"];
+    totalSum += tempData[1];
   }
+  // console.log("Total sum : " + totalSum);
 
   if (getNumberOfPeople() > 1) {
     totalSum = totalSum / getNumberOfPeople();
@@ -92,7 +91,7 @@ its expect one of the following values called tip
 which is going to be updated in the DOMContent
 */
 function updateTip(tip) {
-  console.log(`New tip: ${tip}`);
+  // console.log(`New tip: ${tip}`);
   tipElement.innerText = tip;
 }
 
@@ -103,9 +102,9 @@ which is going to be updated in the DOMContent
 */
 
 function updatePlasticWasteData(totalPlasticWaste) {
-  console.log(
-    `totalPlasticWaste: ${roundTotalSumUpToTwoDecimals(totalPlasticWaste)}`
-  );
+  // console.log(
+  //   `totalPlasticWaste: ${roundTotalSumUpToTwoDecimals(totalPlasticWaste)}`
+  // );
   totalPlasticWasteAmount.innerText = `${roundTotalSumUpToTwoDecimals(
     totalPlasticWaste
   )} kg / year.`;
@@ -119,8 +118,12 @@ function getDataForm() {
   var formData = new FormData(form[0]);
 
   for (var pair of formData.entries()) {
-    if (pair[0] !== "no_of_people" && pair[1] > 0) {
-      userInputData.set(pair[0], pair[1]);
+    if (pair[0] !== "no_of_people" && pair[1] >= 0) {
+      const item = itemObject[pair[0]];
+      const itemUnitValue = pair[1] * item["unit"];
+
+      // console.log("itemUnitValue : " + itemUnitValue);
+      userInputData.set(pair[0], itemUnitValue);
     }
   }
 
@@ -137,6 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "focus",
       (event) => {
         event.target.value = "";
+        totalSum = 0;
         if (event.target.getAttribute("class") !== null) {
           event.target.removeAttribute("class");
         }
@@ -159,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function validateInputFields(event) {
-  if (event.target.value > 0 && event.target.value.length > 0) {
+  if (event.target.value >= 0 && event.target.value.length >= 0) {
     return true;
   } else {
     return false;
@@ -173,7 +177,7 @@ function resetCalculator() {
   const x = document.getElementById("updateForm");
   let i;
   for (i = 0; i < x.length; i++) {
-    console.log(x.elements[i].tagName);
+    // console.log(x.elements[i].tagName);
     if (x.elements[i].tagName === "INPUT") {
       x.elements[i].value = "0";
     } else if (x.elements[i].tagName === "SELECT") {
@@ -190,7 +194,6 @@ function resetCalculator() {
 function getNumberOfPeople() {
   return document.forms[0].no_of_people.value;
 }
-
 
 /* Calaclate the the totalsum based on the number of value. */
 function caculateDataBasedOnNumberOfPeople() {
