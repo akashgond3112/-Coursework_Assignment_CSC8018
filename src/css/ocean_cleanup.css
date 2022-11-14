@@ -319,9 +319,14 @@ input {
   font-size: 12px;
 }
 
-select{
+select {
   height: 15px;
   font-size: 12px;
+  vertical-align: middle;
+}
+
+.drop_down {
+  margin-right: 0.5rem;
 }
 
 .flex_container-2_secondary {
@@ -361,8 +366,8 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .input_error {
-	color: #D8000C;
-	background-color: #FFBABA;
+  color: #d8000c;
+  background-color: #ffbaba;
 }
 
 /* -----------------------------Calculator----------------------------------------------- */
@@ -469,5 +474,23 @@ footer {
     bottom: 35%;
     left: 35%;
     transform: translate(-20%, -20%);
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 888px) {
+
+  .text-box {
+    top: 20%;
+}
+  .heading-primary-main {
+    top: 20px;
+    left: -35px;
+    font-size: 20px;
+  }
+  .heading-primary-secondary {
+    font-size: 50px;
+  }
+  .heading-primary-last {
+    font-size: 50px;
   }
 }
