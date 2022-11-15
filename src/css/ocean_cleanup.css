@@ -6,7 +6,7 @@
 
 body {
   font-family: "EB Garamond", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 15px;
   line-height: 1.5;
   color: #333;
@@ -20,20 +20,27 @@ h2 {
   font-family: "Special Elite", cursive;
 }
 
-h3 {
+h3{
   font-size: 20px;
   font-weight: 400;
   font-family: "Special Elite", cursive;
   padding: 10px 0px;
 }
 
-h4 {
+table th {
   font-size: 20px;
   font-weight: 400;
   font-family: "Special Elite", cursive;
   padding: 10px 0px;
 }
 
+.small_para {
+  padding-bottom: 10px;
+}
+
+.table_header th {
+  font-size: 22px;
+}
 /* ----------------------Header-Start---------------------------------------------- */
 .header {
   height: 45vh;
@@ -203,15 +210,6 @@ figcaption {
   margin-bottom: 15px;
 }
 
-.conainer_image-para-1 {
-  padding-bottom: 20px;
-}
-
-.conainer_image-para-3 {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
 .image-2_para {
   padding-left: 30px;
 }
@@ -250,13 +248,6 @@ table {
   margin-bottom: 40px;
   margin-left: 40px;
 }
-
-.section-5_container_flex-2,
-.section-5_container_flex-3,
-.section-5_container_flex-4 {
-  padding-bottom: 10px;
-}
-
 /* -----------------------------Section-6-End------------------------------------------- */
 
 /* -----------------------------Section-7-Start----------------------------------------- */
@@ -269,7 +260,6 @@ i {
   font-size: 36px;
   color: #069da2;
 }
-
 
 .image-4_container,
 .image-5_container {
@@ -286,17 +276,6 @@ i {
   float: right;
   margin-left: 40px;
 }
-
-.section-7 p {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-/* #Plastic_Recycling {
-  padding-top: 20px;
-  padding-bottom: 20px;
-} */
-
 /* -----------------------------Section-7-End------------------------------------------- */
 /*-------------------------------Calculator-Start-----------------------------------------*/
 input {
@@ -329,8 +308,6 @@ select {
 }
 
 table tr th,
-h4,
-h3,
 span {
   text-align: left;
 }
@@ -370,7 +347,7 @@ footer {
 /* -------------------------------------------------------------------------------------- */
 /* On screens that are 700px wide or less*/
 @media screen and (max-width: 700px) {
-  main{
+  main {
     display: unset;
   }
   .container-1,
@@ -454,10 +431,9 @@ footer {
 }
 
 @media only screen and (min-width: 600px) and (max-width: 888px) {
-
   .text-box {
     top: 20%;
-}
+  }
   .heading-primary-main {
     top: 20px;
     left: -35px;
