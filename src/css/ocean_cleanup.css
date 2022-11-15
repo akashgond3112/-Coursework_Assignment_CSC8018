@@ -128,15 +128,23 @@ h4 {
 }
 /* ----------------------NavBar-End---------------------------------------------- */
 
-.container {
-  padding-left: 25%;
-  padding-right: 25%;
+main {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 75% 21%;
+  align-items: end;
+  margin-bottom: 3rem;
+}
+
+.container-1 {
+  padding-left: 35%;
 }
 
 .container-2 {
-  padding-left: 25%;
-  padding-right: 3%;
-  padding-bottom: 2%;
+  background-color: #fff6c6;
+  box-shadow: 10px 10px 10px 0px #b3adad;
+  border-radius: 20px;
+  padding-left: 1rem;
 }
 
 .video iframe,
@@ -259,17 +267,9 @@ table {
 i {
   font-weight: 400;
   font-size: 36px;
-  /* color: #04b19f; */
-  color: hsl(182deg 93% 33%);
+  color: #069da2;
 }
 
-#Ocean_Cleanup {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-/* -----------------------------Section-7-End------------------------------------------- */
-
-/* -----------------------------Section-8-Start----------------------------------------- */
 
 .image-4_container,
 .image-5_container {
@@ -287,32 +287,18 @@ i {
   margin-left: 40px;
 }
 
-.section-8 p {
+.section-7 p {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.flex_container-2_main {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-}
-
-.flex_container-2_primary {
-  flex: 50%;
-}
-
-.section-7_flex_container_4_primary,
-.section-7_flex_container_4_secondary {
-  padding-bottom: 20px;
-}
-
-#Plastic_Recycling {
+/* #Plastic_Recycling {
   padding-top: 20px;
   padding-bottom: 20px;
-}
-/* -----------------------------Section-8--End------------------------------------------- */
-/* --------------------------------Calculator-Start----------------------------------------- */
+} */
+
+/* -----------------------------Section-7-End------------------------------------------- */
+/*-------------------------------Calculator-Start-----------------------------------------*/
 input {
   width: 50%;
   height: 15px;
@@ -329,21 +315,13 @@ select {
   margin-right: 0.2rem;
 }
 
-.flex_container-2_secondary {
-  flex: 10%;
-  background-color: #fff6c6;
-  box-shadow: 10px 10px 10px 0px #b3adad;
-  border-radius: 20px;
-  padding-left: 10px;
-}
-
 .bottom {
   padding-top: 20px;
   padding-bottom: 20px;
 }
 .bottom button {
   background-color: #fff3b3;
-  border-color: #fff3b3;
+  border-color: #dcd39e;
   border-radius: 6px;
   width: 120%;
   text-align: center;
@@ -392,10 +370,16 @@ footer {
 /* -------------------------------------------------------------------------------------- */
 /* On screens that are 700px wide or less*/
 @media screen and (max-width: 700px) {
-  .container,
+  main{
+    display: unset;
+  }
+  .container-1,
   .container-2 {
     padding-left: 5%;
     padding-right: 5%;
+  }
+  .container-2 {
+    margin: 2%;
   }
 
   .header {
@@ -451,11 +435,6 @@ footer {
   .image-2_para {
     padding-top: 25px;
     padding-left: 0px;
-  }
-
-  .flex_container-2_main,
-  .flex_container-2_secondary {
-    flex-direction: column;
   }
 
   table tr td {

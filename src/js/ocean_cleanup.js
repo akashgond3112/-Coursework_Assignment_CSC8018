@@ -9,7 +9,7 @@ const itemObject = {
   "Detergent cleaning product bottles": { usageTime: "month", unit: 0.12 },
   "Shampoo conditioner toiletries": { usageTime: "month", unit: 0.08 },
   "Plastic Toothbrushes": { usageTime: "month", unit: 0.02 },
-  Toothpaste: { usageTime: "month", unit: 0.01 },
+  "Toothpaste": { usageTime: "month", unit: 0.01 },
 };
 
 const behaviourTip = {
@@ -31,12 +31,11 @@ const behaviourTip = {
     "Explore refill stations in your neighborhood to cut down on plastic waste from toiletries.",
   "Plastic toothbrushes":
     "Seriously? How often do you brush your teeth? Anyway, Did you know there are toothbrushes made from wood?",
-  Toothpaste:
+  "Toothpaste":
     "Seriously? How much toothpaste do you use? Did you know there are plastic-free alternatives available?",
 };
 
-const calculator = document.querySelector("#updateForm"),
-  form = document.querySelectorAll(".updateForm");
+const form = document.querySelectorAll("#updateForm");
 
 const inputFields = document.querySelectorAll('input[type="number"]');
 
@@ -58,7 +57,6 @@ function gethighestAmountOfWaste() {
     e[1] > a[1] ? e : a
   );
 
-  // console.log(`"Max:" ${highestAmountOfWaste}`);
   updateTip(highestAmountOfWaste[0]);
   calculateEstimatedPlasticFootPrints();
   updatePlasticWasteData(totalSum);
@@ -74,11 +72,8 @@ function calculateEstimatedPlasticFootPrints() {
 
   for (let data in filterData) {
     let tempData = filterData[data];
-    // console.log("total data for : " + tempData[0] + " - " + tempData[1]);
-
     totalSum += tempData[1];
   }
-  // console.log("Total sum : " + totalSum);
 
   if (getNumberOfPeople() > 1) {
     totalSum = totalSum / getNumberOfPeople();
@@ -91,7 +86,6 @@ its expect one of the following values called tip
 which is going to be updated in the DOMContent
 */
 function updateTip(tip) {
-  // console.log(`New tip: ${tip}`);
   tipElement.innerText = tip;
 }
 
@@ -102,9 +96,6 @@ which is going to be updated in the DOMContent
 */
 
 function updatePlasticWasteData(totalPlasticWaste) {
-  // console.log(
-  //   `totalPlasticWaste: ${roundTotalSumUpToTwoDecimals(totalPlasticWaste)}`
-  // );
   totalPlasticWasteAmount.innerText = `${roundTotalSumUpToTwoDecimals(
     totalPlasticWaste
   )} kg / year.`;
@@ -122,7 +113,6 @@ function getDataForm() {
       const item = itemObject[pair[0]];
       const itemUnitValue = pair[1] * item["unit"];
 
-      // console.log("itemUnitValue : " + itemUnitValue);
       userInputData.set(pair[0], itemUnitValue);
     }
   }
@@ -150,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let isInputValid = false;
 
-    inputFields[i].addEventListener("blur", (event) => {
+    inputFields[i].addEventListener("change", (event) => {
       event.target.removeAttribute("class");
       isInputValid = validateInputFields(event); // check if the input value is not empty and not less than 0
       if (isInputValid) {
