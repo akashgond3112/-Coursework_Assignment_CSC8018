@@ -35,7 +35,7 @@ table th {
 }
 
 .small_para {
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 .table_header th {
@@ -182,13 +182,22 @@ figure {
   font-family: "Special Elite", cursive;
 }
 
-figure.image-2_container,
-figure.image-4_container {
+.image {
+  width: 45%;
+  margin-bottom: 25px;
+}
+
+.image-2_container,
+.image-4_container {
+  float: left;
+  margin-right: 50px;
   transform: rotate(-3deg);
 }
 
-figure.image-3_container,
-figure.image-5_container {
+.image-3_container,
+.image-5_container {
+  float: right;
+  margin-left: 50px;
   transform: rotate(3deg);
 }
 
@@ -201,31 +210,21 @@ figcaption {
 
 /* ---------------------------End All Images and captions Styling -----------------------*/
 
-/* -----------------------------Section-4-start----------------------------------------- */
-
-.image-2_container {
-  width: 40%;
-  float: left;
-  margin-right: 50px;
-  margin-bottom: 15px;
-}
-
-.image-2_para {
-  padding-left: 30px;
-}
-/* ------------------------------Section-4-End-------------------------------------- */
 /* ------------------------------Section 5 Start-------------------------------------- */
 caption {
   border-top: 2px solid;
   border-bottom: 2px solid;
 }
+
 .table-data_1 {
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
   clear: both;
+  border-collapse: collapse;
 }
+
 .table-data_1 colgroup {
   text-decoration: overline;
 }
@@ -234,21 +233,7 @@ caption {
   border-bottom: 1px solid;
 }
 
-table {
-  border-collapse: collapse;
-}
-
 /* --------------------------------Section-5-End--------------------------------------- */
-
-/* --------------------------------Section-6-start------------------------------------------ */
-
-.image-3_container {
-  width: 30%;
-  float: right;
-  margin-bottom: 40px;
-  margin-left: 40px;
-}
-/* -----------------------------Section-6-End------------------------------------------- */
 
 /* -----------------------------Section-7-Start----------------------------------------- */
 .quote_2 {
@@ -261,21 +246,6 @@ i {
   color: #069da2;
 }
 
-.image-4_container,
-.image-5_container {
-  width: 44%;
-  margin-bottom: 40px;
-}
-
-.image-4_container {
-  float: left;
-  margin-right: 40px;
-}
-
-.image-5_container {
-  float: right;
-  margin-left: 40px;
-}
 /* -----------------------------Section-7-End------------------------------------------- */
 /*-------------------------------Calculator-Start-----------------------------------------*/
 input {
