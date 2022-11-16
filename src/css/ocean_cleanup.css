@@ -41,6 +41,7 @@ table th {
 .table_header th {
   font-size: 22px;
 }
+
 /* ----------------------Header-Start---------------------------------------------- */
 .header {
   height: 45vh;
@@ -133,6 +134,7 @@ table th {
 .dropdown-content {
   display: none;
 }
+
 /* ----------------------NavBar-End---------------------------------------------- */
 
 main {
@@ -268,6 +270,7 @@ select {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
 .bottom button {
   background-color: #fff3b3;
   border-color: #dcd39e;
@@ -314,22 +317,14 @@ footer {
 .footer-main a {
   color: inherit;
 }
+
 /* -------------------------------------------------------------------------------------- */
-/* On screens that are 700px wide or less*/
-@media screen and (max-width: 700px) {
+/* On screens mobile*/
+@media only screen and (min-width: 360px) and (max-width: 768px) {
   main {
     display: unset;
   }
 
-  /* .container-1 {
-  padding-left: 35%;
-}
-
-  .container-1,
-  .container-2 {
-    padding-left: 5%;
-    padding-right: 5%;
-  } */
 
   .container-1 {
     padding: 0%;
@@ -343,6 +338,7 @@ footer {
   .header {
     height: 65vh;
   }
+
   .text-box {
     position: absolute;
     top: 30%;
@@ -355,9 +351,11 @@ footer {
     left: -25px;
     font-size: 15px;
   }
+
   .heading-primary-secondary {
     font-size: 24px;
   }
+
   .heading-primary-last {
     font-size: 24px;
   }
@@ -411,9 +409,13 @@ footer {
   }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 1050px) {
+@media only screen and (min-width: 769px) and (max-width: 1050px) {
   main {
     display: unset;
+  }
+
+  .text-box {
+    top: 40%;
   }
 
   .container-1 {
@@ -422,22 +424,51 @@ footer {
 
   .container-1,
   .container-2 {
-    margin-left : 15%;
-    margin-right : 15%;
+    margin-left: 15%;
+    margin-right: 15%;
   }
 
-  .text-box {
-    top: 20%;
-  }
   .heading-primary-main {
     top: 20px;
     left: -35px;
     font-size: 20px;
   }
+
   .heading-primary-secondary {
     font-size: 50px;
   }
+
   .heading-primary-last {
     font-size: 50px;
+  }
+}
+
+
+@media only screen and (min-width: 1360px) and (max-width: 2560px) {
+  body {
+    font-size: 20px;
+  }
+
+  main {
+    gap: 5rem;
+    grid-template-columns: 70% 25%;
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+  .heading-primary-main {
+    font-size: 40px;
+    top: 25px;
+    left: -65px;
+  }
+
+  .heading-primary-secondary {
+    font-size: 80px;
+  }
+
+  .heading-primary-last {
+    font-size: 80px;
   }
 }
