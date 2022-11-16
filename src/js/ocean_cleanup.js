@@ -45,9 +45,9 @@ const totalPlasticWasteAmount = document.querySelector(
   ".totalPlasticWasteAmount"
 );
 
-const userInputData = new Map();
+const userInputData = new Map(); // initalised a map store user input for each item
 
-let totalSum = 0;
+let totalSum = 0; // intialised a total sum variable.
 
 /* 
 To get the item that accounts for the highest amount of plastic waste.
@@ -57,9 +57,9 @@ function gethighestAmountOfWaste() {
     e[1] > a[1] ? e : a
   );
 
-  updateTip(highestAmountOfWaste[0]);
-  calculateEstimatedPlasticFootPrints();
-  updatePlasticWasteData(totalSum);
+  updateTip(highestAmountOfWaste[0]); // call the method to update the tip
+  calculateEstimatedPlasticFootPrints(); // calcute the total sum
+  updatePlasticWasteData(totalSum); // update the DOM with total sum
 }
 
 /* 
@@ -72,11 +72,12 @@ function calculateEstimatedPlasticFootPrints() {
 
   for (let data in filterData) {
     let tempData = filterData[data];
-    totalSum += tempData[1];
+    totalSum += tempData[1]; // increment the total sum
   }
 
+  // if number of people is increased divide the total sum with no. of people.
   if (getNumberOfPeople() > 1) {
-    totalSum = totalSum / getNumberOfPeople();
+    caculateDataBasedOnNumberOfPeople();
   }
 }
 
@@ -109,11 +110,11 @@ function getDataForm() {
   var formData = new FormData(form[0]);
 
   for (var pair of formData.entries()) {
-    if (pair[0] !== "no_of_people" && pair[1] >= 0) {
-      const item = itemObject[pair[0]];
-      const itemUnitValue = pair[1] * item["unit"];
+    if (pair[0] !== "no_of_people" && pair[1] >= 0) { // we will except all the input even 0 also.
+      const item = itemObject[pair[0]]; // get the matching item from the item object
+      const itemUnitValue = pair[1] * item["unit"]; // multiply the input value * unit for item
 
-      userInputData.set(pair[0], itemUnitValue);
+      userInputData.set(pair[0], itemUnitValue); // insert into to map < item, value> 
     }
   }
 
@@ -142,8 +143,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     inputFields[i].addEventListener("change", (event) => {
       event.target.removeAttribute("class");
-      isInputValid = validateInputFields(event); // check if the input value is not empty and not less than 0
-      if (isInputValid) {
+      isInputValid = validateInputFields(event); 
+      if (isInputValid) { // check if input is valid or npt
         getDataForm();
       } else {
         event.target.setAttribute("class", "input_error");
@@ -152,6 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// validate if user input is in negative number
 function validateInputFields(event) {
   if (event.target.value >= 0 && event.target.value.length >= 0) {
     return true;
@@ -187,7 +189,6 @@ function getNumberOfPeople() {
 
 /* Calaclate the the totalsum based on the number of value. */
 function caculateDataBasedOnNumberOfPeople() {
-  console.log(`New totalSum ${totalSum / getNumberOfPeople()}}`);
   updatePlasticWasteData(totalSum / getNumberOfPeople());
 }
 
