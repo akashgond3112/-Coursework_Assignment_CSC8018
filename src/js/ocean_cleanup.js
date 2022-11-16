@@ -18,21 +18,22 @@ const behaviourTip = {
   "Plastic bags":
     "Bring reusable fabric totes for shopping and refuse plastic bags when offered.",
   "Food wrapping": "Consider to buy more unpackaged food at local markets.",
-  "Yogurt, cream, etc. containers":
+  "Yogurt cream etc containers":
     "Some places offer dairy in glass containers. You could even explore recipes to make your own yogurt.",
-  "Take-away plastic boxes":
+  "Take away plastic boxes":
     "Cut down on take-out packaging by preparing more meals at home.",
   "Take-away cups": "Bring your own tumbler when ordering hot beverages to go.",
-  "Plastic-wrapped packages":
+  "Plastic wrapped packages":
     "Try to purchase more products in shops rather than online.",
-  "Detergent & cleaning product bottles":
+  "Detergent cleaning product bottles":
     "Explore refill stations in your neighborhood to cut down on bottles from detergents and cleaning products.",
-  "Shampoo, conditioner & toiletries":
+  "Shampoo conditioner toiletries":
     "Explore refill stations in your neighborhood to cut down on plastic waste from toiletries.",
-  "Plastic toothbrushes":
+  "Plastic Toothbrushes":
     "Seriously? How often do you brush your teeth? Anyway, Did you know there are toothbrushes made from wood?",
   "Toothpaste":
     "Seriously? How much toothpaste do you use? Did you know there are plastic-free alternatives available?",
+  "unknown sources": "",
 };
 
 const form = document.querySelectorAll("#updateForm");
@@ -40,6 +41,8 @@ const form = document.querySelectorAll("#updateForm");
 const inputFields = document.querySelectorAll('input[type="number"]');
 
 const tipElement = document.querySelector(".unknown-sources");
+
+const behaviourTipParent = document.querySelector(".behaviourTip");
 
 const totalPlasticWasteAmount = document.querySelector(
   ".totalPlasticWasteAmount"
@@ -88,6 +91,7 @@ which is going to be updated in the DOMContent
 */
 function updateTip(tip) {
   tipElement.innerText = tip;
+  behaviourTipParent.innerText = behaviourTip[tip];
 }
 
 /* 
@@ -110,11 +114,12 @@ function getDataForm() {
   var formData = new FormData(form[0]);
 
   for (var pair of formData.entries()) {
-    if (pair[0] !== "no_of_people" && pair[1] >= 0) { // we will except all the input even 0 also.
+    if (pair[0] !== "no_of_people" && pair[1] >= 0) {
+      // we will except all the input even 0 also.
       const item = itemObject[pair[0]]; // get the matching item from the item object
       const itemUnitValue = pair[1] * item["unit"]; // multiply the input value * unit for item
 
-      userInputData.set(pair[0], itemUnitValue); // insert into to map < item, value> 
+      userInputData.set(pair[0], itemUnitValue); // insert into to map < item, value>
     }
   }
 
@@ -143,8 +148,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     inputFields[i].addEventListener("change", (event) => {
       event.target.removeAttribute("class");
-      isInputValid = validateInputFields(event); 
-      if (isInputValid) { // check if input is valid or npt
+      isInputValid = validateInputFields(event);
+      if (isInputValid) {
+        // check if input is valid or npt
         getDataForm();
       } else {
         event.target.setAttribute("class", "input_error");

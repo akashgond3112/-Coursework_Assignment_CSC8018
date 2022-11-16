@@ -325,7 +325,6 @@ footer {
     display: unset;
   }
 
-
   .container-1 {
     padding: 0%;
   }
@@ -443,8 +442,7 @@ footer {
   }
 }
 
-
-@media only screen and (min-width: 1360px) and (max-width: 2560px) {
+@media only screen and (min-width: 1367px) and (max-width: 2560px) {
   body {
     font-size: 20px;
   }
@@ -454,6 +452,7 @@ footer {
     grid-template-columns: 70% 25%;
   }
 
+  h2,
   h3 {
     font-size: 25px;
   }
