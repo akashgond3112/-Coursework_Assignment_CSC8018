@@ -108,7 +108,7 @@ function updatePlasticWasteData(totalPlasticWaste) {
 
 /* 
 The behaviour of this function is to get all the input fields
-data from the form whose value is greater than 0 and add them to the temp list.
+data from the form whose value is 0 and greater than 0 and add them to the temp map.
 */
 function getDataForm() {
   var formData = new FormData(form[0]);
